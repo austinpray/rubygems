@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'did_you_mean/levenshtein'
+
 ##
 # A collection of text-wrangling methods
 
