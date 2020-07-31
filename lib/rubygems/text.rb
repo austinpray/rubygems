@@ -86,7 +86,7 @@ module Gem::Text
 end
 
 # Use the latest and greatest DidYouMean::Levenshtein if it is available
-begin
+if RUBY_VERSION >= '2.7' && defined?(DidYouMean)
   require 'did_you_mean/levenshtein'
 
   module Gem::Text::LevenshteinExt
@@ -96,7 +96,4 @@ begin
   end
 
   Gem::Text.prepend(Gem::Text::LevenshteinExt)
-
-rescue LoadError
-  # ignored
 end
