@@ -50,7 +50,7 @@ module Gem::Text
   end
 
   # Returns a value representing the "cost" of transforming str1 into str2
-  # Vendored version of DidYouMean::Levenshtein.distance from the did_you_mean gem
+  # Vendored version of DidYouMean::Levenshtein.distance from the ruby/did_you_mean gem @ 1.4.0
   # https://git.io/JJgZI
   def levenshtein_distance(str1, str2)
     n = str1.length
