@@ -84,16 +84,3 @@ module Gem::Text
     x
   end
 end
-
-# Use the latest and greatest DidYouMean::Levenshtein if it is available
-if RUBY_VERSION >= '2.7' && defined?(DidYouMean)
-  require 'did_you_mean/levenshtein'
-
-  module Gem::Text::LevenshteinExt
-    def levenshtein_distance(str1, str2)
-      DidYouMean::Levenshtein.distance(str1, str2)
-    end
-  end
-
-  Gem::Text.prepend(Gem::Text::LevenshteinExt)
-end
